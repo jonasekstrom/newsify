@@ -782,6 +782,7 @@ main.innerHTML = "";
 
 
     checkForURL = x.parentElement.nextSibling.getAttribute('name');
+    console.log(checkForURL);
 
   firebase.database().ref("users/" + thisUser + "/favourites").orderByValue().equalTo(checkForURL).once('value', snapshot => {
 
