@@ -395,7 +395,7 @@ let firebaseInsertUserWithEmail = function (userID, userName, userMail) {
   })
 }
 
-const storedUser;
+const storedUser = "";
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
