@@ -82,6 +82,7 @@ loginFb.addEventListener("click", function () {
 
     } else {
       firebase.auth().signInWithRedirect(fbProvider);
+      location.reload();
       firebase.auth().getRedirectResult().then(function (result) {
         if (result.credential) {
           uid = response.publicProfile.id;
@@ -90,7 +91,6 @@ loginFb.addEventListener("click", function () {
           upicture = response.additionalUserInfo.profile.picture.data.url;
           firebaseInsertUserFacebook(uid, uname, upicture, uemail);
         }
-        location.reload();
       })
         .catch(function (error) {
           // Handle Errors here.
