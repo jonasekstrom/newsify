@@ -100,6 +100,8 @@ loginFb.addEventListener("click", function () {
         });
     }
   });
+  location.reload();
+
 });
 
 
