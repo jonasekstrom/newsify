@@ -71,10 +71,7 @@ loginFb.addEventListener("click", function () {
             firebaseInsertUserFacebook(uid, uname, upicture, uemail);
             
           })
-            .then(function(){
-              location.reload();
-            })
-            .catch(function (error) {
+           .catch(function (error) {
               console.log('error authenticating fb in database ' + error);
             });
 
@@ -93,6 +90,7 @@ loginFb.addEventListener("click", function () {
           upicture = response.additionalUserInfo.profile.picture.data.url;
           firebaseInsertUserFacebook(uid, uname, upicture, uemail);
         }
+        location.reload();
       })
         .catch(function (error) {
           // Handle Errors here.
