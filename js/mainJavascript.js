@@ -48,7 +48,7 @@ var fbProvider = new firebase.auth.FacebookAuthProvider();
 
 loginFb.addEventListener("click", function () {
   //simple click event on the "facebook login" div
-
+console.log(1);
   let uid = '';
   let uname = '';
   let upicture = '';
@@ -56,10 +56,13 @@ loginFb.addEventListener("click", function () {
   let accessToken = '';
 
   FB.getLoginStatus(function (response) {
+    console.log(2);
     if (response.status == 'unknown' || response.status == 'not_authorized') {
+      console.log(3);
       FB.login(function (response) {
+        console.log(4);
         if (response.authResponse) {
-
+          console.log(5);
           accessToken = response.accessToken;
 
           signedInNowOrBefore = "now";
@@ -69,7 +72,7 @@ loginFb.addEventListener("click", function () {
             uname = response.additionalUserInfo.profile.name;
             upicture = response.additionalUserInfo.profile.picture.data.url;
             firebaseInsertUserFacebook(uid, uname, upicture, uemail);
-            
+            console.log(6);
           })
            .catch(function (error) {
               console.log('error authenticating fb in database ' + error);
@@ -77,19 +80,25 @@ loginFb.addEventListener("click", function () {
 
         } else {
         }
+        console.log(7);
       },
         { scope: 'public_profile,email' })
 
     } else {
+      console.log(8);
       firebase.auth().signInWithRedirect(fbProvider);
+      console.log(9);
       firebase.auth().getRedirectResult().then(function (result) {
+        console.log(10);
         if (result.credential) {
+          console.log(11);
           uid = response.publicProfile.id;
           uemail = response.additionalUserInfo.profile.email;
           uname = response.additionalUserInfo.profile.name;
           upicture = response.additionalUserInfo.profile.picture.data.url;
           firebaseInsertUserFacebook(uid, uname, upicture, uemail);
         }
+        console.log(12);
       })
         .catch(function (error) {
           // Handle Errors here.
@@ -98,8 +107,11 @@ loginFb.addEventListener("click", function () {
           var errorMessage = error.message;
           console.log(errorMessage);
         });
+        console.log(13);
     }
+    console.log(14);
   });
+  console.log(15);
   location.reload();
 
 });
