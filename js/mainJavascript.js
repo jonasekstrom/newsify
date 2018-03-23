@@ -157,7 +157,7 @@ let loginHeader = function (user) {
   header.appendChild(loggedIn);
   loginPopup.style.display = "none";
 }
-
+console.log(1)
 let id = "";
 
 
@@ -398,7 +398,7 @@ let firebaseInsertUserWithEmail = function (userID, userName, userMail) {
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-
+    console.log(1)
 
 
     if(window.innerWidth > 600){
@@ -422,7 +422,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         }
     })
-
+    console.log(1)
 
 
 
@@ -445,7 +445,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
     //when the user is logged in, runs loginHeader
 
-
+    console.log(1)
     loginHeader(user);
     var search = firebase.database().ref("users/").orderByChild(user.uid);
     sammaid = user.uid;
@@ -465,6 +465,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("buttons").style.display = "none"
     // No user is signed in.
   }
+  console.log(1)
 });
 
 
