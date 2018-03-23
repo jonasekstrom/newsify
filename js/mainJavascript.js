@@ -112,7 +112,7 @@ console.log(1);
     console.log(14);
   });
   console.log(15);
-  location.reload();
+  
   console.log(16);
 });
 
