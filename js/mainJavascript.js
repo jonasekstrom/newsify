@@ -780,12 +780,11 @@ main.innerHTML = "";
   var checkForURL;
 
   const changeTextIfStored = document.getElementsByClassName('showFavouriteText');
-  if(thisUser){
+  if(storedUser !== null){
   for (let x of changeTextIfStored){
 
 
     checkForURL = x.parentElement.nextSibling.getAttribute('name');
-    console.log(checkForURL);
 
   firebase.database().ref("users/" + thisUser + "/favourites").orderByValue().equalTo(checkForURL).once('value', snapshot => {
 
