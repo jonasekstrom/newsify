@@ -75,8 +75,8 @@ console.log(1);
             console.log(6);
           })
            .catch(function (error) {
+          });
               console.log('error authenticating fb in database ' + error);
-            });
 
         } else {
         }
@@ -156,6 +156,7 @@ let loginHeader = function (user) {
   loginDiv.style.display = "none";
   header.appendChild(loggedIn);
   loginPopup.style.display = "none";
+  getAllNews();
 }
 console.log(1)
 let id = "";
