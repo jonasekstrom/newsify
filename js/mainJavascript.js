@@ -777,7 +777,7 @@ main.innerHTML = "";
   var checkForURL;
 
   const changeTextIfStored = document.getElementsByClassName('showFavouriteText');
-  if(thisUser && changeTextIfStored.textContent === "Remove"){
+  if(thisUser){
   for (let x of changeTextIfStored){
 
 
