@@ -467,7 +467,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
   console.log(1)
 });
-
+console.log(1)
 
 
 let sourceCode = '';
