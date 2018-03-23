@@ -451,6 +451,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     document.getElementById("buttons").style.display = "none"
     // No user is signed in.
   }
+  location.reload();
 });
 
 
