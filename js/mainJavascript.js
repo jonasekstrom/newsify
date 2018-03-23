@@ -400,7 +400,7 @@ var storedUser = null;
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     console.log(1)
-    storedUser = user;
+    storedUser = user.id;
     console.log(storedUser);
     if(window.innerWidth > 600){
 
