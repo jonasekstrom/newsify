@@ -398,17 +398,18 @@ let firebaseInsertUserWithEmail = function (userID, userName, userMail) {
 const storedUser = "";
 
 firebase.auth().onAuthStateChanged(function (user) {
-  storedUser = user;
-    console.log(storedUser);
   if (user) {
     console.log(1)
-    
+    storedUser = user;
+    console.log(storedUser);
     if(window.innerWidth > 600){
 
         document.getElementById("buttons").style.display = "block"
     }else{
       document.getElementById("buttons").style.display = "none"
       document.getElementById("moreOp").style.display = "block"
+      storedUser = user;
+    console.log(storedUser);
     }
 
     window.addEventListener("resize", function(){
