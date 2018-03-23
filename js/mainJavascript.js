@@ -395,13 +395,13 @@ let firebaseInsertUserWithEmail = function (userID, userName, userMail) {
   })
 }
 
-
+const storedUser;
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     console.log(1)
-
-
+    storedUser = user;
+    console.log(storedUser);
     if(window.innerWidth > 600){
 
         document.getElementById("buttons").style.display = "block"
@@ -861,7 +861,8 @@ var outputSaved = [];
     }
   }
   // to get a userid from firebase when logged in
-  var storedUser = localStorage.getItem("userid");
+  //var storedUser = localStorage.getItem("userid");
+  console.log(storedUser);
   if (localStorage.getItem("userid") !== null){
       firebase.database().ref("users/" + storedUser + "/favourites").on('value', snapshot => {
         let updateCounter = snapshot.val();
