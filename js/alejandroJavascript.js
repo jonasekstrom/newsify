@@ -15,7 +15,7 @@ var callback = function () {
   var weatherResponse = '';
   var suggestedNews = document.getElementById('suggestedNews');
 
-/*
+
   var browseWeather = function (object, weatherLocation) {
     let dayIcon = object.DailyForecasts[0].Day.Icon;
     let min = object.DailyForecasts[0].Temperature.Minimum.Value;
@@ -176,7 +176,7 @@ var callback = function () {
 
   getLocation();
   //raden är kommenterat pga begränsat antal anrop till API:t
-*/
+
 
 
   getAllNews();
